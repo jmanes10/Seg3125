@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+
+<div class="container">
+    <div class="name_div">
+        <a href="index.html" class="store_name">Walmart Grocery Store</a>
+        <br/>
+        <label>~All the items of grocery store under one roof~</label>
+      </div>
+<div class="tab">
+  <button class="tablinks active" onclick="openInfo(event, 'Client')">Buyer</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent"  style="display:block;">
+  <h3 class="h3_heading"> Buyer Information</h3>
+  <p class="">Tell us a bit about you.</p>
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value="">--Select Category--</option>
+	<option value="Vegetarian">Vegan</option>
+    <option value="GlutenFree">Wheat free</option>
+    <option value="Diabetic">Diabetic</option>
+    <option value="None">None</option>
+  </select>
+
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your Products</h3>
+  <p>Products based on your choice.</p>
+	 Add items to cart
+   <div id="displayProduct"></div>
+   <br/>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">Add to cart</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p id="cart_msg">Cart is Currently empty</p>
+  <div id="displayCart"></div>
+</div>
+<footer>
+  <div>
+    <span>Designed by: <strong>Joshua Essiet</strong></span>
+  </div>
+</footer>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
